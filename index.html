@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Friend Request 💝</title>
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fce7f3;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ec4899;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #22c55e;
+      color: white;
+    }
+
+    #no {
+      background-color: #9ca3af;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Will you be my Valentine friend? 😊💖</h1>
+    <button id="yes">Yes 😄</button>
+    <button id="no">No 🙃</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseenter", () => {
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    });
+
+    document.getElementById("yes").addEventListener("click", () => {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          background:#fce7f3;
+          font-family:Arial;
+          text-align:center;
+        ">
+          <h1>Yay! 😄💖<br>Best Valentine friend ever!</h1>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
+</html>
